@@ -2,7 +2,6 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Random;
 
 public class DataParser {
 
@@ -10,16 +9,16 @@ public class DataParser {
     String a_pathTarget;
     String b_pathDataPoint;
     String b_pathTarget;
-    File TrainingFile;
-    File TestFile;
+    File DataSetFile;
+
 
     public DataParser(String a_pathDataPoint, String a_pathTarget, String b_pathDataPoint, String b_pathTarget) throws IOException {
         this.a_pathDataPoint = a_pathDataPoint;
         this.a_pathTarget = a_pathTarget;
         this.b_pathDataPoint = b_pathDataPoint;
         this.b_pathTarget = b_pathTarget;
-        this.TrainingFile = null;
-        this.TestFile = null;
+        this.DataSetFile = null;
+
     }
     public void generateTrainingTestFiles() throws IOException {
         File a_path = addTarget(this.a_pathDataPoint, this.a_pathTarget);
@@ -44,14 +43,14 @@ public class DataParser {
         BufferedReader tagetStream = new BufferedReader(new InputStreamReader(Targetstream));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 
-        String labelLine = datapointStream.readLine() + ";T;";
+        String labelLine = datapointStream.readLine() + "T;";
         bw.write(labelLine);
         bw.newLine();
 
         String targetLine, datapointLine;
         while (((datapointLine = datapointStream.readLine()) != null) &&
                 ((targetLine = tagetStream.readLine()) != null)) {
-            String str = (datapointLine + ";" + targetLine + ";");
+            String str = (datapointLine + " " + targetLine + " ");
             bw.write(str);
             bw.newLine();}
 
@@ -62,7 +61,6 @@ public class DataParser {
     }
 
     public void concatenateFiles(File file1, File file2) throws IOException {
-
         FileInputStream Expression1 = new FileInputStream(file1);
         FileInputStream Expression2 = new FileInputStream(file2);
 
@@ -70,53 +68,32 @@ public class DataParser {
         String folderPath = new String(Arrays.copyOfRange(file1.getAbsolutePath().getBytes(), 0,
                 file1.getAbsolutePath().lastIndexOf("\\")));
 
-        Path pathToTrainFile = Paths.get(folderPath + "\\" + "TRAIN_" + name[1]);
-        this.TrainingFile = new File(String.valueOf(pathToTrainFile));
-        FileOutputStream training = new FileOutputStream(this.TrainingFile);
-
-        Path pathToTestFile = Paths.get(folderPath + "\\" + "TEST_" + name[1]);
-        this.TrainingFile = new File(String.valueOf(pathToTestFile));
-        FileOutputStream test = new FileOutputStream(this.TrainingFile);
+        Path pathToTrainFile = Paths.get(folderPath + "\\" + "SET_" + name[1]);
+        this.DataSetFile = new File(String.valueOf(pathToTrainFile));
+        FileOutputStream training = new FileOutputStream(this.DataSetFile);
 
         BufferedReader Stream1 = new BufferedReader(new InputStreamReader(Expression1));
         BufferedReader Stream2 = new BufferedReader(new InputStreamReader(Expression2));
-        BufferedWriter TrainingBuffer = new BufferedWriter(new OutputStreamWriter(training));
-        BufferedWriter TestingBuffer = new BufferedWriter(new OutputStreamWriter(test));
+        BufferedWriter DataSetBuffer = new BufferedWriter(new OutputStreamWriter(training));
 
         String labelLine1 = Stream1.readLine();
         String labelLine2 = Stream2.readLine();
 
-        Random rn2 = new Random();
-        Random rn1 = new Random();
-
-        TrainingBuffer.write(labelLine1);
-        TestingBuffer.write(labelLine2);
-        TestingBuffer.newLine();
-        TrainingBuffer.newLine();
+        DataSetBuffer.write(labelLine1);
+        DataSetBuffer.newLine();
+        String trash = labelLine2;
 
         String line1, line2;
         while (((line1 = Stream2.readLine()) != null) && ((line2 = Stream2.readLine()) != null)) {
-            int n1 = rn1.nextInt(10) + 1;
-            if (n1 <= 7) {
-                TrainingBuffer.write(line1);
-                TrainingBuffer.newLine();
-            } else {
-                TestingBuffer.write(line1);
-                TestingBuffer.newLine();
-            }
-            int n2 = rn2.nextInt(10) + 1;
-            if (n2 <= 7) {
-                TrainingBuffer.write(line2);
-                TrainingBuffer.newLine();
-            } else {
-                TestingBuffer.write(line1);
-                TestingBuffer.newLine();
-            }
+            DataSetBuffer.write(line1);
+            DataSetBuffer.newLine();
+            DataSetBuffer.write(line2);
+            DataSetBuffer.newLine();
         }
+
         Stream1.close();
         Stream2.close();
-        TestingBuffer.close();
-        TrainingBuffer.close();
+        DataSetBuffer.close();
         file1.delete();
         file2.delete();
     }
