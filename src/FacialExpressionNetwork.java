@@ -62,12 +62,12 @@ public class FacialExpressionNetwork {
             Double out = StringToDouble(networkOutputString);
 
             String desiredString = Arrays.toString(dataRow.getDesiredOutput());
-             double desired = StringToDouble(desiredString);
+            double desired = StringToDouble(desiredString);
 
-             double error = Math.abs(out-desired);
+            double error = Math.abs(out - desired);
 
             System.out.println("Output: " + out);
-            System.out.println("Desired Output: " + desiredString);
+            System.out.println("Desired Output: " + desired);
             System.out.println("Error : " + error);
 
         }

@@ -101,4 +101,3 @@ public class DataParser {
         file2.delete();
     }
 }
-
