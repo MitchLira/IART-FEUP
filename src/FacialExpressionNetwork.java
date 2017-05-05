@@ -56,35 +56,64 @@ public class FacialExpressionNetwork {
         for (DataSetRow dataRow : testSet.getRows()) {
             neuroNetwork.setInput(dataRow.getInput());
             neuroNetwork.calculate();
+
             double[] networkOutput = neuroNetwork.getOutput();
-            System.out.println("Output: " + Arrays.toString(networkOutput));
-            System.out.println("Desired Output: " + Arrays.toString(dataRow.getDesiredOutput()));
+            String networkOutputString = Arrays.toString(networkOutput);
+            Double out = StringToDouble(networkOutputString);
+
+            String desiredString = Arrays.toString(dataRow.getDesiredOutput());
+             double desired = StringToDouble(desiredString);
+
+             double error = Math.abs(out-desired);
+
+            System.out.println("Output: " + out);
+            System.out.println("Desired Output: " + desiredString);
+            System.out.println("Error : " + error);
+
         }
 
+    }
+
+    public Double StringToDouble(String input) {
+
+        String number = input.substring(2, input.length() - 1);
+
+        return Double.parseDouble(number);
     }
 
     public static void parseData() throws IOException {
         DataParser affirmative_expression = new DataParser("Expressions\\a_affirmative_datapoints.txt", "Expressions\\a_affirmative_targets.txt", "Expressions\\b_affirmative_datapoints.txt", "Expressions\\b_affirmative_targets.txt");
         affirmative_expression.generateTrainingTestFiles();
+
         DataParser conditional_expression = new DataParser("Expressions\\a_conditional_datapoints.txt", "Expressions\\a_conditional_targets.txt", "Expressions\\b_conditional_datapoints.txt", "Expressions\\b_conditional_targets.txt");
         conditional_expression.generateTrainingTestFiles();
+
         DataParser doubts_question_expression = new DataParser("Expressions\\a_doubt_question_datapoints.txt", "Expressions\\a_doubts_question_targets.txt", "Expressions\\b_doubt_question_datapoints.txt", "Expressions\\b_doubt_question_targets.txt");
         doubts_question_expression.generateTrainingTestFiles();
+
         DataParser emphasis_expression = new DataParser("Expressions\\a_emphasis_datapoints.txt", "Expressions\\a_emphasis_targets.txt", "Expressions\\b_emphasis_datapoints.txt", "Expressions\\b_emphasis_targets.txt");
         emphasis_expression.generateTrainingTestFiles();
+
         DataParser negative_expression = new DataParser("Expressions\\a_negative_datapoints.txt", "Expressions\\a_negative_targets.txt", "Expressions\\b_negative_datapoints.txt", "Expressions\\b_negative_targets.txt");
         negative_expression.generateTrainingTestFiles();
+
         DataParser relative_expression = new DataParser("Expressions\\a_relative_datapoints.txt", "Expressions\\a_relative_targets.txt", "Expressions\\b_relative_datapoints.txt", "Expressions\\b_relative_targets.txt");
         relative_expression.generateTrainingTestFiles();
+
         DataParser topics_expression = new DataParser("Expressions\\a_topics_datapoints.txt", "Expressions\\a_topics_targets.txt", "Expressions\\b_topics_datapoints.txt", "Expressions\\b_topics_targets.txt");
         topics_expression.generateTrainingTestFiles();
+
         DataParser wh_question_expression = new DataParser("Expressions\\a_wh_question_datapoints.txt", "Expressions\\a_wh_question_targets.txt", "Expressions\\b_wh_question_datapoints.txt", "Expressions\\b_wh_question_targets.txt");
         wh_question_expression.generateTrainingTestFiles();
+
         DataParser yn_question_expression = new DataParser("Expressions\\a_yn_question_datapoints.txt", "Expressions\\a_yn_question_targets.txt", "Expressions\\b_yn_question_datapoints.txt", "Expressions\\b_yn_question_targets.txt");
         yn_question_expression.generateTrainingTestFiles();
+
     }
 
     public static void main(String[] args) {
+
+
         try {
             FacialExpressionNetwork.parseData();
         } catch (IOException e) {
@@ -126,6 +155,7 @@ public class FacialExpressionNetwork {
         FacialExpressionNetwork ynNetwork = new FacialExpressionNetwork();
         DataSet ynTest = ynNetwork.generatingNetwork("Expressions\\SET_yn.txt", 1000, 0.1, 0.01);
         ynNetwork.testNeuralNetwork(ynTest);
+
     }
 
 }
