@@ -20,13 +20,11 @@ public class DataParser {
         this.DataSetFile = null;
 
     }
-
-    public void generateTrainingTestFiles() throws IOException {
+    public void fileConcatenator() throws IOException {
         File a_path = addTarget(this.a_pathDataPoint, this.a_pathTarget);
         File b_path = addTarget(this.b_pathDataPoint, this.b_pathTarget);
         this.concatenateFiles(a_path, b_path);
     }
-
     public File addTarget(String pathDataPoint, String pathTarget) throws IOException {
         File datapoint = new File(pathDataPoint);
         FileInputStream DataPointstream = new FileInputStream(datapoint);
@@ -54,8 +52,7 @@ public class DataParser {
                 ((targetLine = tagetStream.readLine()) != null)) {
             String str = (datapointLine + " " + targetLine + " ");
             bw.write(str);
-            bw.newLine();
-        }
+            bw.newLine();}
 
         datapointStream.close();
         tagetStream.close();
@@ -72,6 +69,11 @@ public class DataParser {
                 file1.getAbsolutePath().lastIndexOf("\\")));
 
         Path pathToTrainFile = Paths.get(folderPath + "\\" + "SET_" + name[1]);
+        File file = new File(pathToTrainFile.toString());
+        if(file.exists())
+        {
+            return;
+        }
         this.DataSetFile = new File(String.valueOf(pathToTrainFile));
         FileOutputStream training = new FileOutputStream(this.DataSetFile);
 
@@ -101,3 +103,4 @@ public class DataParser {
         file2.delete();
     }
 }
+
