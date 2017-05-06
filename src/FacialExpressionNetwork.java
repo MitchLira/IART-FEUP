@@ -64,7 +64,7 @@ public class FacialExpressionNetwork {
 
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream(finalFile);
+            fos = new FileOutputStream(finalFile, true);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -127,13 +127,11 @@ public class FacialExpressionNetwork {
 
             System.out.println("Output: " + networkOutput[0] );
             System.out.println("Desired Output: " + networkDesiredOutput[0] );
-            System.out.println("Diff: " + Math.pow(networkOutput[0] - networkDesiredOutput[0],2));
 
             i++;
         }
 
         error = diff/i;
-        System.out.println("Error: " + error);
 
         try {
             line.write("Test accuracy: " + error);
