@@ -7,6 +7,13 @@
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/ajt-2.9.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/android-x.x.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/javaml-0.1.7.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/logback-classic-1.0.13.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/weka.jar!/" />
+      <root url="jar://C:/Program Files/neuroph-2.9/libs/slf4j-nop-1.7.6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
