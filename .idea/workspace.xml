@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d14e31e5-00ce-4711-82d5-d580317a1273" name="Default" comment="error completed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ResultExpression .java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Proj1/DataParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Proj1/FacialExpressionNetwork.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_beykery_neuroph_2_92.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_beykery_neuroph_2_92.xml" />
+    <list default="true" id="d14e31e5-00ce-4711-82d5-d580317a1273" name="Default" comment="print result expression">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/IART1617_INT_E5_1.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/output.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/relatorio intercalar.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/view_points.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-adapters-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-contrib-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-core-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-imgrec-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-ocr-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neuroph-samples-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_affirmative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_conditional.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_doubt.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_emphasis.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_negative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_relative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_topics.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_wh.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/Final_yn.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_affirmative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_conditional.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_doubt.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_emphasis.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_negative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_relative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_topics.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_wh.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/SET_yn.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_affirmative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_affirmative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_affirmative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_conditional.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_conditional_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_conditional_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_doubt.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_doubt_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_doubts_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_emphasis.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_emphasis_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_emphasis_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_negative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_negative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_negative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_relative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_relative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_relative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_topics.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_topics_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_topics_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_wh.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_wh_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_wh_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_yn.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_yn_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/a_yn_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_affirmative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_affirmative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_affirmative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_conditional.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_conditional_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_conditional_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_doubt.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_doubt_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_doubt_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_emphasis.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_emphasis_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_emphasis_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_negative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_negative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_negative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_relative.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_relative_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_relative_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_topics.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_topics_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_topics_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_wh.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_wh_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_wh_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_yn.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_yn_question_datapoints.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/b_yn_question_targets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expressions/data_descriptions.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FacialExpressionNetwork.java" afterPath="$PROJECT_DIR$/src/FacialExpressionNetwork.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +104,8 @@
       <file leaf-file-name="FacialExpressionNetwork.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FacialExpressionNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="182" column="32" lean-forward="true" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="224" column="64" lean-forward="true" selection-start-line="224" selection-start-column="64" selection-end-line="224" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#generatingNetwork#0;class#FacialExpressionNetwork#0" expanded="false" />
@@ -40,7 +118,7 @@
       <file leaf-file-name="ResultExpression .java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ResultExpression .java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
+            <state relative-caret-position="17">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -159,8 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,32 +250,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IAr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IART-FEUP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Program Files/neuroph-2.9/libs/slf4j-nop-1.7.6.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -484,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493998567909</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="print result expression">
+      <created>1494888090374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494888090374</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -510,12 +581,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14139694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16865417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17835365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18292683" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -535,7 +606,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="error completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="error completed" />
+    <MESSAGE value="print result expression" />
+    <option name="LAST_COMMIT_MESSAGE" value="print result expression" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -548,6 +620,88 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/FacialExpressionNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#generatingNetwork#0;class#FacialExpressionNetwork#0" expanded="false" />
+            <element signature="method#parseData#0;class#FacialExpressionNetwork#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResultExpression .java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DataParser#0;class#DataParser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FacialExpressionNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#generatingNetwork#0;class#FacialExpressionNetwork#0" expanded="false" />
+            <element signature="method#parseData#0;class#FacialExpressionNetwork#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResultExpression .java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DataParser#0;class#DataParser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FacialExpressionNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -806,7 +960,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ResultExpression .java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
+        <state relative-caret-position="17">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -816,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FacialExpressionNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="182" column="32" lean-forward="true" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+        <state relative-caret-position="221">
+          <caret line="224" column="64" lean-forward="true" selection-start-line="224" selection-start-column="64" selection-end-line="224" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generatingNetwork#0;class#FacialExpressionNetwork#0" expanded="false" />
@@ -891,7 +1045,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>org.beykery:neuroph:2.92</last-edited>
+          <last-edited>neuroph-core-2.9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
