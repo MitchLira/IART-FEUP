@@ -7,10 +7,7 @@ import org.neuroph.util.data.norm.MaxMinNormalizer;
 import org.neuroph.util.data.sample.SubSampling;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 
 public class FacialExpressionNetwork {
     private static final int ENTRYNODES = 301;
@@ -21,14 +18,15 @@ public class FacialExpressionNetwork {
 
     private MultiLayerPerceptron neuroNetwork;
     private DataSet dataset;
-    private DataSet dataTest;
     private DataSet dataTraining;
+    private DataSet dataTest;
     private BackPropagation learningRule;
+    private File Finalfile;
 
     public FacialExpressionNetwork() {
     }
 
-    public File generatingNetwork(String path, int maxIterations, double learningRate, double maxError) {
+    public void generatingNetwork(String path, int maxIterations, double learningRate, double maxError) {
 
         // create multi layer perceptron
         neuroNetwork = new MultiLayerPerceptron(TransferFunctionType.SIGMOID, ENTRYNODES, INTERMEDIATENODES, OUTPUTNODES);
@@ -51,10 +49,10 @@ public class FacialExpressionNetwork {
         dataTraining = dataSets.get(0);
         dataTest = dataSets.get(1);
 
-
         neuroNetwork.learn(dataTraining, learningRule);
         String[] name = path.split("_");
         File finalFile = new File("Expressions\\Final_" + name[1]);
+        this.Finalfile = finalFile;
         if (!finalFile.exists()) {
             try {
                 finalFile.createNewFile();
@@ -87,27 +85,28 @@ public class FacialExpressionNetwork {
         }
         error = diff / i;
         try {
-            line.write("Train accuracy: " + error);
+            line.write("Train error: " + error);
             line.newLine();
             line.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return finalFile;
+
     }
 
-    public double testNeuralNetwork(File finalFile) {
-        if (!finalFile.exists()) {
+    public double testNeuralNetwork( DataSet set) {
+
+        if (!this.Finalfile.exists()) {
             try {
-                finalFile.createNewFile();
+                this.Finalfile.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream(finalFile, true);
+            fos = new FileOutputStream(this.Finalfile, true);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -116,16 +115,14 @@ public class FacialExpressionNetwork {
         int i = 0;
         double error;
         double diff = 0.0;
-
-
-        for (DataSetRow dataRow : this.dataTest.getRows()) {
+        double avg = 0.0;
+        for (DataSetRow dataRow : dataTest.getRows()) {
             neuroNetwork.setInput(dataRow.getInput());
             neuroNetwork.calculate();
             double[] networkOutput = neuroNetwork.getOutput();
             double[] networkDesiredOutput = dataRow.getDesiredOutput();
             diff += Math.pow(networkOutput[0] - networkDesiredOutput[0], 2);
-
-
+            avg += Math.abs(networkOutput[0] - networkDesiredOutput[0]);
             System.out.println("Output: " + networkOutput[0]);
             System.out.println("Desired Output: " + networkDesiredOutput[0]);
 
@@ -135,7 +132,9 @@ public class FacialExpressionNetwork {
         error = diff / i;
 
         try {
-            line.write("Test accuracy: " + error);
+            line.write("Test error: " + error);
+            line.newLine();
+            line.write("Average error: " + avg/i);
             line.newLine();
             line.close();
         } catch (IOException e) {
@@ -143,7 +142,6 @@ public class FacialExpressionNetwork {
         }
 
         return error;
-
     }
 
     public static void parseData() throws IOException {
@@ -177,6 +175,9 @@ public class FacialExpressionNetwork {
 
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+
+
         try {
             FacialExpressionNetwork.parseData();
         } catch (IOException e) {
@@ -185,55 +186,71 @@ public class FacialExpressionNetwork {
 
         ResultExpression result = new ResultExpression();
 
-        FacialExpressionNetwork affirmativeNetwork = new FacialExpressionNetwork();
-        File aff_file = affirmativeNetwork.generatingNetwork("Expressions\\SET_affirmative.txt", 1000, 0.1, 0.01);
-        double aff_error = affirmativeNetwork.testNeuralNetwork(aff_file);
-        result.addData("affirmative", aff_error);
+//        File testFile = new File(args[0]);
+          File testFile = new File("Expressions\\SET_wh.txt");
+  //      if(testFile.isFile() && testFile.exists())
+    //    {
+            runNeuralNetworks(testFile, result);
+      //  }
+
+      //  result.resultExpression();
+
+        long time = System.currentTimeMillis() - start;
+        System.out.println("Time: " + time);
+    }
+
+
+
+    public static void runNeuralNetworks(File testFile, ResultExpression result){
+        DataSet dataset = DataSet.createFromFile(testFile.getAbsolutePath(), ENTRYNODES, OUTPUTNODES, " ", true);
+
+/*        FacialExpressionNetwork affirmativeNetwork = new FacialExpressionNetwork();
+        affirmativeNetwork.generatingNetwork("Expressions\\SET_affirmative.txt", 1000, 0.2, 0.01);
+        double aff_error = affirmativeNetwork.testNeuralNetwork(dataset);
+
+    //    result.addData("affirmative", aff_error);
 
         FacialExpressionNetwork conditionalNetwork = new FacialExpressionNetwork();
-        File cond_file = conditionalNetwork.generatingNetwork("Expressions\\SET_conditional.txt", 1000, 0.1, 0.01);
-        double cond_error = conditionalNetwork.testNeuralNetwork(cond_file);
-        result.addData("conditional", cond_error);
+        conditionalNetwork.generatingNetwork("Expressions\\SET_conditional.txt", 1000, 0.2, 0.01);
+        double cond_error = conditionalNetwork.testNeuralNetwork(dataset);
+      //  result.addData("conditional", cond_error);
 
 
         FacialExpressionNetwork doubtNetwork = new FacialExpressionNetwork();
-        File doubt_file = doubtNetwork.generatingNetwork("Expressions\\SET_doubt.txt", 1000, 0.1, 0.01);
-        double doubt_error = doubtNetwork.testNeuralNetwork(doubt_file);
-        result.addData("doubt", doubt_error);
+        doubtNetwork.generatingNetwork("Expressions\\SET_doubt.txt", 1000, 0.2, 0.01);
+        double doubt_error = doubtNetwork.testNeuralNetwork( dataset);
+   //     result.addData("doubt", doubt_error);*/
 
         FacialExpressionNetwork empashisNetwork = new FacialExpressionNetwork();
-        File emph_file = empashisNetwork.generatingNetwork("Expressions\\SET_emphasis.txt", 1000, 0.1, 0.01);
-        double emph_error = empashisNetwork.testNeuralNetwork(emph_file);
-        result.addData("emphasis", emph_error);
+       empashisNetwork.generatingNetwork("Expressions\\SET_emphasis.txt", 1000, 0.2, 0.01);
+        double emph_error = empashisNetwork.testNeuralNetwork( dataset);
+     //   result.addData("emphasis", emph_error);
 
-        FacialExpressionNetwork negativeNetwork = new FacialExpressionNetwork();
-        File neg_file = negativeNetwork.generatingNetwork("Expressions\\SET_negative.txt", 1000, 0.1, 0.01);
-        double neg_error = negativeNetwork.testNeuralNetwork(neg_file);
-        result.addData("negative", neg_error);
+     /*   FacialExpressionNetwork negativeNetwork = new FacialExpressionNetwork();
+        negativeNetwork.generatingNetwork("Expressions\\SET_negative.txt", 1000, 0.1, 0.01);
+        double neg_error = negativeNetwork.testNeuralNetwork( dataset);
+     //   result.addData("negative", neg_error);
 
         FacialExpressionNetwork relativeNetwork = new FacialExpressionNetwork();
-        File rel_file = relativeNetwork.generatingNetwork("Expressions\\SET_relative.txt", 1000, 0.1, 0.01);
-        double rel_error = relativeNetwork.testNeuralNetwork(rel_file);
-        result.addData("relative", rel_error);
+        relativeNetwork.generatingNetwork("Expressions\\SET_relative.txt", 1000, 0.1, 0.01);
+        double rel_error = relativeNetwork.testNeuralNetwork( dataset);
+   //     result.addData("relative", rel_error);
 
         FacialExpressionNetwork topicsNetwork = new FacialExpressionNetwork();
-        File top_file = topicsNetwork.generatingNetwork("Expressions\\SET_topics.txt", 1000, 0.1, 0.01);
-        double top_error = topicsNetwork.testNeuralNetwork(top_file);
-        result.addData("topics", top_error);
+        topicsNetwork.generatingNetwork("Expressions\\SET_topics.txt", 1000, 0.1, 0.01);
+        double top_error = topicsNetwork.testNeuralNetwork( dataset);
+     //   result.addData("topics", top_error);
 
         FacialExpressionNetwork whNetwork = new FacialExpressionNetwork();
-        File wh_file = whNetwork.generatingNetwork("Expressions\\SET_wh.txt", 1000, 0.1, 0.01);
-        double wh_error = whNetwork.testNeuralNetwork(wh_file);
-        result.addData("wh", wh_error);
+        whNetwork.generatingNetwork("Expressions\\SET_wh.txt", 1000, 0.1, 0.01);
+        double wh_error = whNetwork.testNeuralNetwork( dataset);
+      //  result.addData("wh", wh_error);
 
         FacialExpressionNetwork ynNetwork = new FacialExpressionNetwork();
-        File yn_file = ynNetwork.generatingNetwork("Expressions\\SET_yn.txt", 1000, 0.1, 0.01);
-        double yn_error = ynNetwork.testNeuralNetwork(yn_file);
-        result.addData("yn", yn_error);
-
-        result.resultExpression();
-
-
+       ynNetwork.generatingNetwork("Expressions\\SET_yn.txt", 1000, 0.1, 0.01);
+        double yn_error = ynNetwork.testNeuralNetwork( dataset);
+      //  result.addData("yn", yn_error);
+        */
     }
 
 }

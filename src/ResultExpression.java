@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.Vector;
 
-class ResultExpression {
+public class ResultExpression {
 
     Vector<Double> expressionsError = new Vector<>();
     Vector<String> expressionsresult = new Vector<>();
