@@ -1,3 +1,12 @@
+<<<<<<< HEAD
 Train error: 0.029249375111045518
 Test error: 0.5629033392852426
 Average error: 0.5891618521073054
+=======
+Train accuracy: 0.02381457712284485
+Test accuracy: 0.06502455307742407
+Train accuracy: 0.023115519822435274
+Test accuracy: 0.06567173710523386
+Train accuracy: 0.13948170323191295
+Test accuracy: 0.1550594811662822
+>>>>>>> origin/master
